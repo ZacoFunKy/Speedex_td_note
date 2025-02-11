@@ -14,6 +14,7 @@ public class GetOrdersResponse
         public string UpdateDate { get; init; }
         public decimal TotalPrice { get; init; }
         public decimal TotalWeight { get; init; }
+        public decimal TotalPriceEur { get; init; }
     }
 
     public record Recipient

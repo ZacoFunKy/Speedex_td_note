@@ -50,6 +50,7 @@ public class CreateOrderCommandHandler : ICommandHandler<CreateOrderCommand, Cre
         decimal total = 0;
         decimal weightInKg = 0;
         double volumeTotal = 0;
+        decimal priceEur = 0;
         if (_productRepository != null)
         {
             foreach (var product in command.Products)
@@ -82,11 +83,13 @@ public class CreateOrderCommandHandler : ICommandHandler<CreateOrderCommand, Cre
                     productDto.Dimensions.Unit != null)
                 {
                     volumeTotal += productDto.Dimensions.VolumeInCubicMeter;
+                    priceEur += productDto.Price.ToEUR().Amount;
                 }
             }
 
             command.Price = total;
             command.Weight = weightInKg;
+            command.PriceEur = priceEur;
 
             // Debugging information
             Console.WriteLine($"Total weight in kg: {weightInKg}");

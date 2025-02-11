@@ -11,8 +11,8 @@ public record Order
     public DateTime CreationDate { get; init; }
     public DateTime UpdateDate { get; init; }
     public decimal TotalPrice { get; init; } = 0;
-    
     public decimal TotalWeight { get; init; } = 0;
+    public decimal TotalPriceEur { get; init; } = 0;
     
 }
 

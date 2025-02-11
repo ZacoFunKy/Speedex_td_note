@@ -33,7 +33,8 @@ public static class CreateOrderCommandMapper
             CreationDate = now,
             UpdateDate = now,
             TotalPrice = command.Price,
-            TotalWeight = command.Weight
+            TotalWeight = command.Weight,
+            TotalPriceEur = command.PriceEur
         };
     }
 }
